@@ -1,0 +1,9 @@
+# mac
+.DS_Store
+
+# scons
+.sconsign.dblite
+
+# godot
+.godot/
+*.uid

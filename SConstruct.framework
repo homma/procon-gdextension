@@ -1,0 +1,27 @@
+import os
+import sys
+
+# Build Environment
+env = SConscript("godot-cpp/SConstruct")
+env = env.Clone()
+env.Append(CCFLAGS=["-std=c++2c"])
+
+env.Append(CPPPATH=["src/"])
+sources = Glob("src/*.cpp")
+
+# Library
+## SDL3
+framework_path = "."
+env.Append(CPPFLAGS=["-F" + framework_path])
+env.Append(LINKFLAGS=["-Wl,-framework,SDL3", "-Wl,-F" + framework_path])
+
+# Shared Library
+library = env.SharedLibrary(
+    target="staging-proj/bin/libprocon.{}.{}.dylib".format(
+        env["platform"], env["target"]
+    ),
+    source=sources,
+)
+
+# Default Build Target
+Default(library)
