@@ -7,8 +7,6 @@ func _run():
 
 # create the main scene
 func create_main_scene():
-    var size = Vector3(1, 5, 3)
-    var position = Vector3(0, 2.5, 0)
 
     # root node
     var node = ClassDB.instantiate("Node3D")
@@ -18,14 +16,14 @@ func create_main_scene():
     # Mesh
     var mesh = ClassDB.instantiate("MeshInstance3D")
     mesh.set_name("mesh")
-    mesh.set_position(position)
+    mesh.set_position(Vector3(0, 2.5, 0))
     mesh.set_script(load("res://check_procon.gd"))
 
-    var box_mesh = BoxMesh.new()
-    box_mesh.set_size(size)
+    var box_mesh = ClassDB.instantiate("BoxMesh")
+    box_mesh.set_size(Vector3(1, 5, 3))
     mesh.set_mesh(box_mesh)
 
-    var mat = StandardMaterial3D.new()
+    var mat = ClassDB.instantiate("StandardMaterial3D")
     mat.set_albedo(Color(0, 0, 255, 255))
     mesh.set_surface_override_material(0, mat)
 
