@@ -45,4 +45,4 @@ $ godot staging-proj/project.godot
 ````
 
 The editor script `create_scene.gd` creates test scenes.  
-The newly created scenes demonstrate the use of the library.
+The newly created scenes demonstrate the usage of the library.
