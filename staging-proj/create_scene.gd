@@ -46,6 +46,17 @@ func create_main_scene():
     node.add_child(camera)
     camera.set_owner(node)
 
+    # Environment
+    var world = ClassDB.instantiate("WorldEnvironment")
+
+    var env = ClassDB.instantiate("Environment")
+    env.set_background(Environment.BG_COLOR)
+    env.set_bg_color(Color.WHITE)
+    world.set_environment(env)
+
+    node.add_child(world)
+    world.set_owner(node)
+
     create_scene_from_node(node, "check_procon")
 
 # create a scene from Procon and make it an autoload singleton
