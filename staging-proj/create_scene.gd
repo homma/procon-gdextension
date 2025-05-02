@@ -32,6 +32,7 @@ func create_main_scene():
 
     # Light
     var light = ClassDB.instantiate("DirectionalLight3D")
+    light.set_name("light")
     light.set_position(Vector3(0.0, 5.0, -10.0))
     light.set_rotation(Vector3(deg_to_rad(-20.0), deg_to_rad(180.0), deg_to_rad(0.0)))
 
@@ -40,6 +41,7 @@ func create_main_scene():
 
     # Camera
     var camera = ClassDB.instantiate("Camera3D")
+    camera.set_name("camera")
     camera.set_position(Vector3(0.0, 3.0, -8.0))
     camera.set_rotation(Vector3(deg_to_rad(-3.0), deg_to_rad(180.0), deg_to_rad(0.0)))
 
@@ -48,6 +50,7 @@ func create_main_scene():
 
     # Environment
     var world = ClassDB.instantiate("WorldEnvironment")
+    world.set_name("environment")
 
     var env = ClassDB.instantiate("Environment")
     env.set_background(Environment.BG_COLOR)
