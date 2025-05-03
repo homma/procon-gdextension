@@ -24,7 +24,7 @@ func create_main_scene():
     mesh.set_mesh(box_mesh)
 
     var mat = ClassDB.instantiate("StandardMaterial3D")
-    mat.set_albedo(Color(0, 0, 255, 255))
+    mat.set_albedo(Color.BLUE)
     mesh.set_surface_override_material(0, mat)
 
     node.add_child(mesh)

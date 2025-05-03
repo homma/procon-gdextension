@@ -7,4 +7,4 @@ reloadable = true
 [libraries]
 
 macos.debug = "res://bin/libprocon.macos.template_debug.dylib"
-# macos.release = "res://bin/libprocon.macos.template_release.dylib"
+macos.release = "res://bin/libprocon.macos.template_release.dylib"
