@@ -43,7 +43,8 @@ func create_main_scene():
     var camera = ClassDB.instantiate("Camera3D")
     camera.set_name("camera")
     camera.set_position(Vector3(0.0, 3.0, -8.0))
-    camera.set_rotation(Vector3(deg_to_rad(-3.0), deg_to_rad(180.0), deg_to_rad(0.0)))
+    camera.look_at_from_position(camera.position, mesh.position)
+    camera.set_rotation(camera.rotation)
 
     node.add_child(camera)
     camera.set_owner(node)
