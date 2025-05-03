@@ -44,7 +44,6 @@ func create_main_scene():
     camera.set_name("camera")
     camera.set_position(Vector3(0.0, 3.0, -8.0))
     camera.look_at_from_position(camera.position, mesh.position)
-    camera.set_rotation(camera.rotation)
 
     node.add_child(camera)
     camera.set_owner(node)
